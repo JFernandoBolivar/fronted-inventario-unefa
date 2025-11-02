@@ -971,7 +971,7 @@ export default function SalesBillingModule() {
                 <div className="text-center py-12">
                   <FileText className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
                   <p className="text-muted-foreground font-manrope">
-                    Selecciona una factura del ¡¡Historial de Ventas!! para visualizarla aquí.
+                    Selecciona una factura del ¡Historial de Ventas! para visualizarla aquí.
                   </p>
                 </div>
               )}
