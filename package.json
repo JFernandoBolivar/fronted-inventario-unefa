@@ -16,12 +16,18 @@
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-select": "^2.2.6",
     "@radix-ui/react-slot": "^1.2.3",
+<<<<<<< HEAD
     "@radix-ui/react-tabs": "^1.1.13",
     "bcryptjs": "^3.0.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "html2canvas": "^1.4.1",
     "jspdf": "^3.0.3",
+=======
+    "bcryptjs": "^3.0.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+>>>>>>> 72c11592c80c804b1beee52043e637f7cd88b219
     "lucide-react": "^0.543.0",
     "next": "15.5.3",
     "next-auth": "^5.0.0-beta.29",
