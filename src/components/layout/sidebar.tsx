@@ -14,7 +14,6 @@ import {
   Settings,
   BarChart3,
   CreditCard,
-  Truck,
   LogOut,
 } from "lucide-react";
 
@@ -38,15 +37,19 @@ export const modules = [
     icon: ShoppingCart,
     color: "bg-chart-3",
   },
-  /*{ id: "purchases", name: "Compras", icon: Truck, color: "bg-chart-4" },*/
   {
     id: "accounts",
     name: "Cuentas por Cobrar",
     icon: CreditCard,
     color: "bg-chart-5",
   },
-  { id: "users", name: "Usuarios", icon: Users, color: "bg-secondary" },
-  { id: "reports", name: "Reportes", icon: BarChart3, color: "bg-accent" },
+  { id: "admin/users", name: "Usuarios", icon: Users, color: "bg-chart-2" },
+  {
+    id: "admin/reports",
+    name: "Reportes",
+    icon: BarChart3,
+    color: "bg-chart-3",
+  },
 ];
 
 interface SidebarProps {
@@ -66,6 +69,36 @@ export default function Sidebar({
   onLogoutAction,
 }: SidebarProps) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  // Filtrar módulos según el rol del usuario
+  const getFilteredModules = () => {
+    switch (user.role) {
+      case "VENDEDOR":
+        // Solo mostrar Dashboard y Facturación para vendedores
+        return modules.filter(
+          (module) => module.id === "dashboard" || module.id === "sales"
+        );
+
+      case "SUPERVISOR":
+        // Mostrar todo excepto Usuarios para supervisores
+        return modules.filter(
+          (module) =>
+            module.id !== "admin/users" && module.id !== "admin/reports"
+        );
+
+      case "ADMIN":
+        // Mostrar todos los módulos para administradores
+        return modules;
+
+      default:
+        // Por defecto, mostrar solo módulos básicos
+        return modules.filter(
+          (module) => module.id === "dashboard" || module.id === "sales"
+        );
+    }
+  };
+
+  const filteredModules = getFilteredModules();
 
   return (
     <div
@@ -96,11 +129,8 @@ export default function Sidebar({
       </div>
 
       <nav className="flex-1 p-2">
-        {modules.map((module) => {
+        {filteredModules.map((module) => {
           const Icon = module.icon;
-          if (module.id === "users" && user.role !== "ADMIN") {
-            return null;
-          }
           return (
             <Button
               key={module.id}
