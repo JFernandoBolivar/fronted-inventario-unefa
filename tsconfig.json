@@ -27,11 +27,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/types/next-auth.d.tsx"
-<<<<<<< HEAD
-,   "src/components/dashboard"  ],
-=======
-, "src/components/dashboard"  ],
->>>>>>> 72c11592c80c804b1beee52043e637f7cd88b219
+    ".next/types/next-auth.d.tsx", "src/components/dashboard"  ],
   "exclude": ["node_modules"]
 }
