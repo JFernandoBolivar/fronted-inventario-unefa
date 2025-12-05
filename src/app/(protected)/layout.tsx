@@ -50,26 +50,28 @@ export default function DashboardLayout({
   //     redirect("/login");
   //   }
   return (
-    <div className="flex h-screen bg-background">
-      <Sidebar
-        activeModule={getActiveModule()}
-        onModuleChangeAction={handleModuleChange}
-        user={{
-          name: user?.name ?? null,
-          role: (user?.role as "VENDEDOR" | "ADMIN" | "SUPERVISOR") ?? null,
-        }}
-        onLogoutAction={logout}
-      />
-
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <Header
+    <div className="bg-[url(/fondo.png)] w-full  items-center justify-center bg-cover">
+      <div className="flex h-screen  ">
+        <Sidebar
           activeModule={getActiveModule()}
+          onModuleChangeAction={handleModuleChange}
           user={{
-            name: user?.name,
-            username: user?.username,
+            name: user?.name ?? null,
+            role: (user?.role as "VENDEDOR" | "ADMIN" | "SUPERVISOR") ?? null,
           }}
+          onLogoutAction={logout}
         />
-        <main className="flex-1 overflow-auto p-6">{children}</main>
+
+        <div className="flex-1 flex flex-col overflow-hidden">
+          <Header
+            activeModule={getActiveModule()}
+            user={{
+              name: user?.name,
+              username: user?.username,
+            }}
+          />
+          <main className="flex-1 overflow-auto p-6">{children}</main>
+        </div>
       </div>
     </div>
   );

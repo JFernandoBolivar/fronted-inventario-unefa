@@ -47,18 +47,18 @@ const FormLogin = () => {
 
   return (
     <div>
-      <div className="text-center ">
+      <div className="text-center  ">
         <div className="inline-flex items-center justify-center w-16 h-16 bg-teal-600 rounded-full mb-4 my-6">
           <Package className="h-8 w-8 text-primary-foreground" />
         </div>
         <h1 className="text-3xl font-geist font-bold text-foreground">
           Papelería Sistema
         </h1>
-        <p className="text-muted-foreground font-manrope mt-2">
+        <p className="text-gray-900 font-manrope mt-2">
           Sistema integral de gestión
         </p>
       </div>
-      <div className="max-150 border-x-gray-100 w-100 p-8 border rounded-lg shadow-lg my-10">
+      <div className="max-150 border-x-gray-100 w-100 p-8 border rounded-lg shadow-lg my-10 bg-white">
         {" "}
         {/* <div className="text-center mb-8">
         <div className="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full mb-4">

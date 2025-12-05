@@ -1,10 +1,8 @@
 datasource db {
   provider = "postgresql"
-<<<<<<< HEAD
-  url      = env("inventario_papeleria")
-=======
-  url      = env("DATABASE_URL")
->>>>>>> 72c11592c80c804b1beee52043e637f7cd88b219
+
+  url= env("DATABASE_URL")
+
 }
  
 generator client {

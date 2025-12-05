@@ -63,9 +63,7 @@ export default function TablaInventarioEjemplo() {
   const fetchProductos = async () => {
     try {
       setLoading(true);
-      const response = await fetch(
-        "http://localhost:8000/api/inventario/productos/"
-      );
+      const response = await fetch("http://localhost:4000/api/inventory");
       if (!response.ok) {
         throw new Error("Error al cargar los productos");
       }

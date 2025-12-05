@@ -137,7 +137,7 @@ export default function Sidebar({
               variant={activeModule === module.id ? "default" : "ghost"}
               className={`w-full justify-start mb-1 ${
                 activeModule === module.id
-                  ? `${module.color} text-white`
+                  ? `${module.color}  bg-teal-700 text-white `
                   : "text-sidebar-foreground hover:bg-gray-400 "
               }`}
               onClick={() => onModuleChangeAction(module.id)}
